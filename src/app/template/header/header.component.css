@@ -1,0 +1,19 @@
+mat-expansion-panel{
+  background-color: #0B1925;
+  color: #fff;
+}
+.task-icon{
+  color: #fff;
+}
+mat-panel-description{
+  color: #fff;
+
+}
+.btn-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-container button{
+  margin-right: 10px;
+}
