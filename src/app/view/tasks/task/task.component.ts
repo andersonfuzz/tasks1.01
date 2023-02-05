@@ -9,18 +9,7 @@ import { TaskServiceService } from '../task.service.service';
   styleUrls: ['./task.component.css'],
 })
 export class TaskComponent implements OnInit {
-  //     ELEMENT_DATA: Task[] = [
-  //   {id: 1, name: 'Hydrogen', description:' 1.0079'},
-  //   {id: 2, name: 'Helium', description: '4.0026'},
-  //   {id: 3, name: 'Lithium', description: '6.941'},
-  //   {id: 4, name: 'Beryllium', description: '9.012'},
-  //   {id: 5, name: 'Boron', description: '10.811'},
-  //   {id: 6, name: 'Carbon', description: '12.0107'},
-  //   {id: 7, name: 'Nitrogen', description: '14.0067'},
-  //   {id: 8, name: 'Oxygen', description: '15.999'},
-  //   {id: 9, name: 'Fluorine', description: '18.9984'},
-  //   {id: 10, name: 'Neon', description: '20.1797'},
-  // ];
+
   tasks!: Task[];
   displayedColumns = ['id', 'name', 'description', 'actions'];
 
@@ -36,6 +25,5 @@ export class TaskComponent implements OnInit {
     this.taskService.read().subscribe((tasks) => {
       this.tasks=tasks
     });
-    // this.tasks=this.ELEMENT_DATA
   }
 }

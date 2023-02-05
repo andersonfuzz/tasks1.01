@@ -8,7 +8,7 @@ import { Task } from './task.model';
   providedIn: 'root',
 })
 export class TaskServiceService {
-  private url = 'http://localhost:3001/tasks';
+  private baseUrl = 'http://localhost:3001/tasks';
   constructor(private snackBar: MatSnackBar, private http: HttpClient) {}
 
   showMessage(msg: string): void {
@@ -19,9 +19,17 @@ export class TaskServiceService {
     });
   }
   create(task: Task): Observable<Task> {
-    return this.http.post<Task>(this.url, task);
+    return this.http.post<Task>(this.baseUrl, task);
   }
   read(): Observable<Task[]> {
-    return this.http.get<Task[]>(this.url);
+    return this.http.get<Task[]>(this.baseUrl);
+  }
+  readById(id: any): Observable<Task> {
+    const url = `${this.baseUrl}/${id}`;
+    return this.http.get<Task>(url);
+  }
+  update(task: Task): Observable<Task> {
+    const url = `${this.baseUrl}/${task.id}`;
+    return this.http.put<Task>(url, task);
   }
 }
