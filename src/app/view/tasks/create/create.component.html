@@ -1,0 +1,28 @@
+<mat-card>
+  <mat-card-title>New Task</mat-card-title>
+
+  <form>
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Enter the name"
+        name="name"
+        [(ngModel)]="task.name"
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Description"
+        name="description"
+        [(ngModel)]="task.description"
+      />
+    </mat-form-field>
+  </form>
+
+  <div class="container-action">
+    <button mat-flat-button color="warn" (click)="createTask()">Save</button>
+    <button mat-flat-button color="primary" (click)="cancel()">Cancel</button>
+  </div>
+</mat-card>
+

@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+}
+.sidenav-container {
+  width: 150px;
+  height: 93vh;
+  background-color: #253540;
+  color: #fff;
+  padding-top: 50px;
+}
+table {
+  margin: 25px auto;
+  padding: 30px;
+  width: 85%;
+  height: auto;
+}
+
+table a {
+  text-decoration: none;
+  margin-right: 10px;
+}
+#delete{
+color: darkred;
+}
+#edit{
+  color: darkorange;
+}
+

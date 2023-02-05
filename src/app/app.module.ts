@@ -10,8 +10,10 @@ import { NavComponent } from './template/nav/nav.component';
 import { FormsModule } from '@angular/forms';
 import { MaterialModule } from './shared/material/material.module';
 import { HomeComponent } from './view/home/home.component';
-import { TaskComponent } from './tasks/task/task.component';
-import { CreateComponent } from './tasks/create/create.component';
+import { CreateComponent } from './view/tasks/create/create.component';
+import { TaskComponent } from './view/tasks/task/task.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import { CreateComponent } from './tasks/create/create.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
-    MaterialModule
+    MaterialModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
