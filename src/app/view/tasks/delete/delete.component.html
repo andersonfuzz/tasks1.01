@@ -1,0 +1,28 @@
+<mat-card>
+  <mat-card-header>Do you really want to delete the task?</mat-card-header>
+  <mat-card-subtitle>Caution! This action cannot be undone.</mat-card-subtitle>
+  <form>
+    <mat-form-field>
+      <input
+        disabled
+        matInput
+        placeholder="Enter the name"
+        name="name"
+        [value]="task.name"
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        disabled
+        matInput
+        placeholder="Description"
+        name="description"
+        [value]="task.description"
+      />
+    </mat-form-field>
+  </form>
+  <div>
+    <button mat-raised-button color="warn" (click)="delete()">Delete</button>
+    <button mat-raised-button (click)="cancel()">Cancel</button>
+  </div>
+</mat-card>

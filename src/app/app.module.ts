@@ -13,7 +13,9 @@ import { HomeComponent } from './view/home/home.component';
 import { CreateComponent } from './view/tasks/create/create.component';
 import { TaskComponent } from './view/tasks/task/task.component';
 import { HttpClientModule } from '@angular/common/http';
-import { UpdateComponent } from './tasks/update/update.component';
+import { UpdateComponent } from './view/tasks/update/update.component';
+import { DeleteComponent } from './view/tasks/delete/delete.component';
+
 
 
 @NgModule({
@@ -25,7 +27,8 @@ import { UpdateComponent } from './tasks/update/update.component';
     HomeComponent,
     TaskComponent,
     CreateComponent,
-    UpdateComponent
+    UpdateComponent,
+    DeleteComponent
   ],
   imports: [
     BrowserModule,

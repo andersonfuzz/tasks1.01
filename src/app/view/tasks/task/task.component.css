@@ -12,7 +12,7 @@ table {
   margin: 25px auto;
   padding: 30px;
   width: 85%;
-  height: auto;
+  height: min-content;
 }
 
 table a {
