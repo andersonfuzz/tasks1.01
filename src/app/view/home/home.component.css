@@ -1,11 +1,17 @@
-mat-card{
-  background-image: radial-gradient(#A4A5A6,#455159,#253540,#0B1A26,#01060D);
+mat-card {
+  background-image: radial-gradient(
+    #a4a5a6,
+    #455159,
+    #253540,
+    #0b1a26,
+    #01060d
+  );
   color: #fff;
   height: 88vh;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-mat-card mat-card-header{
+mat-card mat-card-header {
   font-size: 10rem;
 }

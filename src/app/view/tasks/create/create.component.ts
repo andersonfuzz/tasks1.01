@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { HeaderService } from 'src/app/template/header/header.service';
 import { Task } from '../task.model';
 import { TaskServiceService } from '../task.service.service';
 
@@ -8,17 +9,23 @@ import { TaskServiceService } from '../task.service.service';
   templateUrl: './create.component.html',
   styleUrls: ['./create.component.css'],
 })
-export class CreateComponent implements OnInit {
+export class CreateComponent {
   task: Task = {
     name: '',
     description: '',
   };
   constructor(
     private taskService: TaskServiceService,
-    private router: Router
-  ) {}
+    private router: Router,
+    private headerService: HeaderService
+  ) {
+    this.headerService.headerData = {
+      title: 'Add new task',
+      icon: 'add_task',
+      routeUrl: '/create',
+    };
+  }
 
-  ngOnInit(): void {}
   createTask() {
     this.taskService.create(this.task).subscribe(() => {
       this.taskService.showMessage('Added task!');

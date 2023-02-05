@@ -19,10 +19,9 @@ table a {
   text-decoration: none;
   margin-right: 10px;
 }
-#delete{
-color: darkred;
+#delete {
+  color: darkred;
 }
-#edit{
+#edit {
   color: darkorange;
 }
-

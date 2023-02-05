@@ -13,4 +13,6 @@ form {
 }
 .container-action button {
   margin-right: 10px;
+  background-color: #0b1824cc;
+  color: #fff;
 }

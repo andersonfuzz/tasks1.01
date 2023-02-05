@@ -5,13 +5,13 @@
       Home
     </button>
     <button mat-button (click)="navigate('create')">
-      <mat-icon>task</mat-icon>
+      <mat-icon>add_task</mat-icon>
       Add task
     </button>
-    <button mat-button routerLink="/create" disabled="">New Task</button>
-    <button mat-button routerLink="/create" disabled="">New Task</button>
-    <button mat-button routerLink="/create" disabled="">New Task</button>
-    <button mat-button routerLink="/create" disabled="">New Task</button>
+    <button mat-button routerLink="/create" disabled="">Disabled</button>
+    <button mat-button routerLink="/create" disabled="">Disabled</button>
+    <button mat-button routerLink="/create" disabled="">Disabled</button>
+    <button mat-button routerLink="/create" disabled="">Disabled</button>
   </mat-sidenav-container>
 
   <table mat-table [dataSource]="tasks" class="mat-elevation-z8">

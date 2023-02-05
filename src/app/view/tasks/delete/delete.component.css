@@ -1,4 +1,4 @@
-mat-card{
+mat-card {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -6,14 +6,18 @@ mat-card{
   width: 80%;
   margin: auto;
 }
-mat-card-header{
+mat-card-header {
   padding: 20px;
   font-size: 2rem;
 }
-mat-card button{
+mat-card button {
   margin-right: 20px;
 }
-form{
+#btn-cancel {
+  background-color: #0b1824cc;
+  color: #fff;
+}
+form {
   display: flex;
   flex-direction: column;
   width: 100%;

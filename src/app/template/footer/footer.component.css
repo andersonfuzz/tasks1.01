@@ -1,13 +1,13 @@
-mat-toolbar{
+mat-toolbar {
   height: min-content;
   display: flex;
   align-items: flex-start;
   justify-content: end;
   position: fixed;
   bottom: 0;
-  background-color:#0B1A26;
+  background-color: #0b1a26;
 }
-mat-toolbar img{
+mat-toolbar img {
   width: 20px;
   padding: 5px;
 }
