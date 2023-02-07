@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HeaderService } from 'src/app/template/header/header.service';
 import { Task } from '../task.model';
 import { TaskServiceService } from '../task.service.service';
@@ -16,7 +16,8 @@ export class TaskComponent implements OnInit {
   constructor(
     private router: Router,
     private taskService: TaskServiceService,
-    private headerService: HeaderService
+    private headerService: HeaderService,
+    private route:ActivatedRoute
   ) {
     headerService.headerData = {
       title: 'Tasks added so far',
@@ -28,10 +29,10 @@ export class TaskComponent implements OnInit {
   navigate(path: string) {
     this.router.navigate([`${path}`]);
   }
+
   ngOnInit(): void {
     this.taskService.read().subscribe((tasks) => {
       this.tasks = tasks;
     });
   }
 }
-
