@@ -8,10 +8,10 @@
       <mat-icon>add_task</mat-icon>
       Add task
     </button>
-    <button mat-button routerLink="/create" disabled="">Disabled</button>
-    <button mat-button routerLink="/create" disabled="">Disabled</button>
-    <button mat-button routerLink="/create" disabled="">Disabled</button>
-    <button mat-button routerLink="/create" disabled="">Disabled</button>
+    <button mat-button disabled="">Disabled</button>
+    <button mat-button disabled="">Disabled</button>
+    <button mat-button disabled="">Disabled</button>
+    <button mat-button disabled="">Disabled</button>
   </mat-sidenav-container>
 
   <table mat-table [dataSource]="tasks" class="mat-elevation-z8">
@@ -43,7 +43,11 @@
         <a routerLink="/tasks/delete/{{ element.id }}">
           <mat-icon id="delete">delete</mat-icon>
         </a>
-        <mat-slide-toggle>Slide me!</mat-slide-toggle>
+        <mat-slide-toggle
+          [checked]="element.done"
+          (change)="taskDone(element.id)"
+          >done?</mat-slide-toggle
+        >
       </td>
     </ng-container>
 

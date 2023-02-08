@@ -13,6 +13,7 @@ export class CreateComponent {
   task: Task = {
     name: '',
     description: '',
+    done: false,
   };
   constructor(
     private taskService: TaskServiceService,

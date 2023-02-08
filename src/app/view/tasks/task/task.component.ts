@@ -11,13 +11,14 @@ import { TaskServiceService } from '../task.service.service';
 })
 export class TaskComponent implements OnInit {
   tasks!: Task[];
+  task!: Task;
   displayedColumns = ['id', 'name', 'description', 'actions'];
 
   constructor(
     private router: Router,
     private taskService: TaskServiceService,
     private headerService: HeaderService,
-    private route:ActivatedRoute
+    private route: ActivatedRoute
   ) {
     headerService.headerData = {
       title: 'Tasks added so far',
@@ -30,6 +31,17 @@ export class TaskComponent implements OnInit {
     this.router.navigate([`${path}`]);
   }
 
+  taskDone(id: number) {
+    this.taskService.readById(id).subscribe((task) => {
+      this.task = task;
+      this.task.done = !this.task.done;
+
+      this.taskService.update(this.task).subscribe((taskUpdate) => {
+        let msg = taskUpdate.done ? 'task completed' : 'task not completed';
+        this.taskService.showMessage(msg);
+      });
+    });
+  }
   ngOnInit(): void {
     this.taskService.read().subscribe((tasks) => {
       this.tasks = tasks;

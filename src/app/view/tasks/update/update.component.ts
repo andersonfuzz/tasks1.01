@@ -28,6 +28,7 @@ export class UpdateComponent implements OnInit {
     const id = this.route.snapshot.paramMap.get('id');
     this.tasksService.readById(id).subscribe((task) => {
       this.task = task;
+      console.log(this.task)
     });
   }
   editTask() {
