@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HeaderService } from 'src/app/template/header/header.service';
-import { Task } from 'src/app/view/tasks/task.model';
 import { TaskServiceService } from 'src/app/view/tasks/task.service.service';
+import { Task } from '../task.model';
 
 @Component({
   selector: 'app-update',
@@ -10,25 +10,26 @@ import { TaskServiceService } from 'src/app/view/tasks/task.service.service';
   styleUrls: ['./update.component.css'],
 })
 export class UpdateComponent implements OnInit {
-  task!: Task;
   constructor(
     private tasksService: TaskServiceService,
     private router: Router,
     private route: ActivatedRoute,
     private headerService: HeaderService
-  ) {
-    this.headerService.headerData = {
-      title: 'Edit your tasks here',
-      icon: 'browser_updated',
-      routeUrl: '/update',
-    };
-  }
+    ) {
+      this.headerService.headerData = {
+        title: 'Edit your tasks here',
+        icon: 'browser_updated',
+        routeUrl: '/update',
+      };
+    }
+    task:Task={
+      name:""
+    }
 
-  ngOnInit(): void {
+    ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
     this.tasksService.readById(id).subscribe((task) => {
       this.task = task;
-      console.log(this.task)
     });
   }
   editTask() {

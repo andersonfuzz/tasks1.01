@@ -10,7 +10,9 @@ import { TaskServiceService } from '../task.service.service';
   styleUrls: ['./delete.component.css'],
 })
 export class DeleteComponent implements OnInit {
-  task!: Task;
+  task:Task={
+    name:""
+  };
   constructor(
     private router: Router,
     private taskService: TaskServiceService,
