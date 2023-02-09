@@ -26,9 +26,10 @@ export class TaskComponent implements OnInit {
       routeUrl: '/task',
     };
   }
-
-  navigate(path: string) {
-    this.router.navigate([`${path}`]);
+  ngOnInit(): void {
+    this.taskService.read().subscribe((tasks) => {
+      this.tasks = tasks;
+    });
   }
 
   taskDone(id: number) {
@@ -39,12 +40,18 @@ export class TaskComponent implements OnInit {
       this.taskService.update(this.task).subscribe((taskUpdate) => {
         let msg = taskUpdate.done ? 'task completed' : 'task not completed';
         this.taskService.showMessage(msg);
+        this.reloadPage();
       });
     });
   }
-  ngOnInit(): void {
-    this.taskService.read().subscribe((tasks) => {
-      this.tasks = tasks;
-    });
+
+  navigate(path: string) {
+    this.router.navigate([`${path}`]);
+  }
+
+  reloadPage() {
+    setTimeout(() => {
+      location.reload();
+    }, 500);
   }
 }

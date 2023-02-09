@@ -25,3 +25,7 @@ table a {
 #edit {
   color: darkorange;
 }
+
+.disabled{
+  pointer-events: none;
+}
