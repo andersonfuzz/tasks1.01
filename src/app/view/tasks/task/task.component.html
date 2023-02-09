@@ -14,50 +14,57 @@
     <button mat-button disabled="">Disabled</button>
   </mat-sidenav-container>
 
-  <table mat-table [dataSource]="tasks" class="mat-elevation-z8">
-    <!-- Id Column -->
-    <ng-container matColumnDef="id">
-      <th mat-header-cell *matHeaderCellDef>Id</th>
-      <td *matCellDef="let element">{{ element.id }}</td>
-    </ng-container>
 
-    <!-- Name Column -->
-    <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef>Name</th>
-      <td mat-cell *matCellDef="let element">{{ element.name }}</td>
-    </ng-container>
+    <table mat-table [dataSource]="tasks" class="mat-elevation-z8">
+      <!-- Id Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef>Id</th>
+        <td *matCellDef="let element">{{ element.id }}</td>
+      </ng-container>
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Name</th>
+        <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+      </ng-container>
+      <!-- Description Column -->
+      <ng-container matColumnDef="description">
+        <th mat-header-cell *matHeaderCellDef>Description</th>
+        <td mat-cell *matCellDef="let element">{{ element.description }}</td>
+      </ng-container>
+      <!-- Actions Column -->
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef>Actions</th>
+        <td mat-cell *matCellDef="let element">
+          <a
+            routerLink="/tasks/update/{{ element.id }}"
+            [ngClass]="{ disabled: element.done == true }"
+          >
+            <mat-icon id="edit">edit</mat-icon>
+          </a>
+          <a
+            routerLink="/tasks/delete/{{ element.id }}"
+            [ngClass]="{ disabled: element.done == true }"
+          >
+            <mat-icon id="delete">delete</mat-icon>
+          </a>
+          <mat-slide-toggle
+            [checked]="element.done"
+            (change)="taskDone(element.id)"
+            >done?</mat-slide-toggle
+          >
+        </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
 
-    <!-- Description Column -->
-    <ng-container matColumnDef="description">
-      <th mat-header-cell *matHeaderCellDef>Description</th>
-      <td mat-cell *matCellDef="let element">{{ element.description }}</td>
-    </ng-container>
 
-    <!-- Actions Column -->
-    <ng-container matColumnDef="actions">
-      <th mat-header-cell *matHeaderCellDef>Actions</th>
-      <td mat-cell *matCellDef="let element">
-        <a routerLink="/tasks/update/{{ element.id }}" [ngClass]="{'disabled':element.done==true}">
-          <mat-icon id="edit">edit</mat-icon>
-        </a>
-        <a routerLink="/tasks/delete/{{ element.id }}"  [ngClass]="{'disabled':element.done==true}">
-          <mat-icon id="delete">delete</mat-icon>
-        </a>
-        <mat-slide-toggle
-          [checked]="element.done"
-          (change)="taskDone(element.id)"
-
-
-          >done?</mat-slide-toggle
-        >
-      </td>
-    </ng-container>
-
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-  </table>
-  <ng-template #spinner>
-    <mat-spinner></mat-spinner>
-
-  </ng-template>
+  <ngx-spinner
+    bdColor="rgba(0, 0, 0, 0.8)"
+    size="medium"
+    color="#fff"
+    type="ball-scale-multiple"
+    [fullScreen]="true"
+    ><h1 style="color: white">Loading...</h1></ngx-spinner
+  >
 </div>

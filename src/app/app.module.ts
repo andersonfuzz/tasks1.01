@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -15,6 +15,7 @@ import { TaskComponent } from './view/tasks/task/task.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UpdateComponent } from './view/tasks/update/update.component';
 import { DeleteComponent } from './view/tasks/delete/delete.component';
+import { NgxSpinnerModule } from "ngx-spinner";
 
 
 
@@ -36,9 +37,11 @@ import { DeleteComponent } from './view/tasks/delete/delete.component';
     BrowserAnimationsModule,
     FormsModule,
     MaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxSpinnerModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }

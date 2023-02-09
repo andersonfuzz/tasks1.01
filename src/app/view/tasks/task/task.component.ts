@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { HeaderService } from 'src/app/template/header/header.service';
 import { Task } from '../task.model';
 import { TaskServiceService } from '../task.service.service';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-task',
@@ -18,7 +19,8 @@ export class TaskComponent implements OnInit {
     private router: Router,
     private taskService: TaskServiceService,
     private headerService: HeaderService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private spinner: NgxSpinnerService
   ) {
     headerService.headerData = {
       title: 'Tasks added so far',
@@ -30,6 +32,11 @@ export class TaskComponent implements OnInit {
     this.taskService.read().subscribe((tasks) => {
       this.tasks = tasks;
     });
+
+    this.spinner.show();
+    setTimeout(() => {
+      this.spinner.hide();
+    }, 2000);
   }
 
   taskDone(id: number) {
