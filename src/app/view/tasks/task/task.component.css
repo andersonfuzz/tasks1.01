@@ -29,7 +29,3 @@ table a {
 .disabled{
   pointer-events: none;
 }
-
-.container-table{
-  width: 100%;
-}
