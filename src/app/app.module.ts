@@ -16,7 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { UpdateComponent } from './view/tasks/update/update.component';
 import { DeleteComponent } from './view/tasks/delete/delete.component';
 import { NgxSpinnerModule } from "ngx-spinner";
-import { GameComponent } from './game/game/game.component';
+import { GameComponent } from './view/game/game.component';
 
 
 

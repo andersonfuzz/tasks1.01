@@ -6,7 +6,7 @@ import { HomeComponent } from './view/home/home.component';
 import { CreateComponent } from './view/tasks/create/create.component';
 import { TaskComponent } from './view/tasks/task/task.component';
 import { DeleteComponent } from './view/tasks/delete/delete.component';
-import { GameComponent } from './game/game/game.component';
+import { GameComponent } from './view/game/game.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
