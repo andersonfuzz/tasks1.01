@@ -15,4 +15,7 @@ export class HomeComponent {
       routeUrl: '',
     };
   }
+  navigate(path: string) {
+    this.router.navigate([`${path}`]);
+  }
 }

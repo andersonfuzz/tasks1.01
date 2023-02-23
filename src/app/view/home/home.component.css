@@ -8,6 +8,7 @@ mat-card {
   );
   color: #fff;
   height: 88vh;
+  width: 86vw;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -15,3 +16,15 @@ mat-card {
 mat-card mat-card-header {
   font-size: 10rem;
 }
+
+.container {
+  display: flex;
+}
+.sidenav-container {
+  width: 150px;
+  height: 93vh;
+  background-color: #253540;
+  color: #fff;
+  padding-top: 50px;
+}
+

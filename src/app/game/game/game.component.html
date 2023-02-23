@@ -4,34 +4,51 @@
       <mat-icon>home</mat-icon>
       Home
     </button>
-    <button mat-button (click)="navigate('create')">
-      <mat-icon>add_task</mat-icon>
-      Add task
+
+    <button mat-button [matMenuTriggerFor]="afterMenu">
+      <mat-icon>task</mat-icon>
+      Tasks
     </button>
-    <button mat-button (click)="navigate('game')" >
+    <mat-menu #afterMenu="matMenu" xPosition="after" class="menu">
+      <button mat-menu-item (click)="navigate('/task')">
+        <mat-icon>table_rows_narrow</mat-icon>
+        Task table
+      </button>
+      <button mat-menu-item (click)="navigate('/create')">
+        <mat-icon>add_task</mat-icon>
+        Add task
+      </button>
+    </mat-menu>
+
+    <button mat-button (click)="navigate('game')">
       <mat-icon>sports_esports</mat-icon>
       Memory Game
     </button>
-
   </mat-sidenav-container>
-
 
   <mat-card class="container-game">
     <div class="shadow">
       <h1>Memory Game</h1>
       <mat-form-field>
         <mat-label>Your best username...</mat-label>
-        <input matInput [(ngModel)]="value">
+        <input matInput [(ngModel)]="value" />
       </mat-form-field>
       <h2>Choose your theme</h2>
       <div class="container-slide">
-        <mat-slide-toggle [(ngModel)]="checked.slideOne" (change)="changeToggle('one')">Tema 01</mat-slide-toggle>
-        <mat-slide-toggle [(ngModel)]="checked.slideTwo" (change)="changeToggle('two')">Tema 02</mat-slide-toggle>
+        <mat-slide-toggle
+          [(ngModel)]="checked.slideOne"
+          (change)="changeToggle('one')"
+          >#band</mat-slide-toggle
+        >
+        <mat-slide-toggle
+          [(ngModel)]="checked.slideTwo"
+          (change)="changeToggle('two')"
+          >#transit Board</mat-slide-toggle
+        >
       </div>
       <button mat-raised-button class="btn-play" color="warn">Play now!</button>
     </div>
   </mat-card>
-
 
   <ngx-spinner
     bdColor="rgba(0, 0, 0, 0.8)"
