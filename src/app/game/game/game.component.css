@@ -1,0 +1,55 @@
+.container {
+  display: flex;
+}
+.sidenav-container {
+  width: 150px;
+  height: 93vh;
+  background-color: #253540;
+  color: #fff;
+  padding-top: 50px;
+}
+mat-card {
+  height: min-content;
+  width: max-content;
+}
+.container-game {
+  background-image: url("/assets/elephant.jpg");
+  background-repeat: repeat;
+  background-position: center;
+  background-size: contain;
+  width: 88vw;
+  height: 88vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.btn-play {
+  /* background-color: #0b1824cc; */
+  color: #fff;
+  padding: 5px;
+  width: 150px;
+}
+.container-slide {
+  display: flex;
+  color: #fff;
+}
+.container-slide mat-slide-toggle {
+  padding: 5px;
+}
+mat-form-field,
+mat-label,
+h1,
+h2 {
+  color: #fff;
+}
+.shadow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 1px 1px 3px #000;
+  padding: 50px;
+  background-color: #0b18249d;
+  border-radius: 5px;
+}
